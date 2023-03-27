@@ -59,6 +59,10 @@ button {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 .ratings {
   display: flex;
   flex-direction: column;

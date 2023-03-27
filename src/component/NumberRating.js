@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function NumberRating() {
   // const [rating, setRating] = null;
@@ -13,20 +13,34 @@ export default function NumberRating() {
 
 function RatingBtns() {
   const ratings = [
-    { id: 1, clicked: false },
-    { id: 2, clicked: false },
-    { id: 3, clicked: false },
-    { id: 4, clicked: false },
-    { id: 5, clicked: false },
+    { key: 1, clicked: false },
+    { key: 2, clicked: false },
+    { key: 3, clicked: false },
+    { key: 4, clicked: false },
+    { key: 5, clicked: false },
   ];
 
+  function handleClick({key}){
+    console.log('clicked');
+    
+  }
+
   const ratingsItems = ratings.map((rating) => (
-    <button className="ratings-selection">{rating.id}</button>
+    <button className="ratings-selection" onClick={() => {
+      console.log(`${rating.key}`);
+    }}>{rating.key}</button>
   ));
 
-  return <div className="ratings-selection-list">{ratingsItems}</div>;
+  return (
+  <div className="ratings-selection-list" >
+    {ratingsItems}
+    </div>
+    );
 }
 
 function Submit() {
-  return <button className="ratings-submit">SUBMIT</button>;
+  function handleSubmit(){
+    
+  }
+  return <button className="ratings-submit" onClick={handleSubmit}>SUBMIT</button>;
 }

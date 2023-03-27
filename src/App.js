@@ -1,6 +1,7 @@
 import './App.css';
 import Content from './component/Content.js';
 import NumberRating from './component/NumberRating.js';
+import Thankyou from './component/Thankyou';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <NumberRating />
     
       </div>
+      <Thankyou />
     </div>
   );
 }
