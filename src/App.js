@@ -11,9 +11,7 @@ function App() {
   const [submitted, setSubmit] = useState(false);
 
   function handleSubmit() {
-    setSubmit(true);
-    console.log(`state is ${rating} & submitted is ${submitted}`); 
-
+    rating != 0 ? setSubmit(true) : setSubmit(false);
   }
 
   return (
