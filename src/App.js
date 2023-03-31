@@ -5,13 +5,14 @@ import Content from "./component/Content.js";
 import NumberRating from "./component/NumberRating.js";
 import Thankyou from "./component/Thankyou";
 import Submit from "./component/Submit";
+import Attribution from "./component/Attribution"
 
 function App() {
   const [rating, setRate] = useState(0);
   const [submitted, setSubmit] = useState(false);
 
   function handleSubmit() {
-    rating != 0 ? setSubmit(true) : setSubmit(false);
+    rating !== 0 ? setSubmit(true) : setSubmit(false);
   }
 
   return (
@@ -24,6 +25,7 @@ function App() {
         </div>
       </div>
         <Thankyou rating={rating} submitted={submitted}/>
+        <Attribution />
       </div>
   );
 }
