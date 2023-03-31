@@ -1,13 +1,7 @@
 export default function NumberRating({rating, setRate}) {
-  function handleSubmit() {
-    console.log(`state is ${rating}`);
-  }
 
   return (
-    <div className="ratings">
       <RatingBtns setRate={setRate} rating={rating} />
-      <Submit rating={rating} handleSubmit={handleSubmit} />
-    </div>
   );
 }
 
@@ -32,10 +26,4 @@ function RatingBtns({ rating, setRate }) {
     </div>;
 }
 
-function Submit({ rating, handleSubmit }) {
-  return (
-    <button className="ratings-submit" onClick={handleSubmit}>
-      SUBMIT
-    </button>
-  );
-}
+

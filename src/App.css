@@ -86,7 +86,7 @@ button {
   color: white
 }
 
-.ratings-selection:active {
+.ratings-selection:active, .ratings-selection:focus{
   background-color: var(--orange);
 }
 
