@@ -1,46 +1,41 @@
-// import { useState } from "react";
-
-export default function NumberRating() {
-  // const [rating, setRating] = null;
+export default function NumberRating({rating, setRate}) {
+  function handleSubmit() {
+    console.log(`state is ${rating}`);
+  }
 
   return (
     <div className="ratings">
-      <RatingBtns />
-      <Submit />
+      <RatingBtns setRate={setRate} rating={rating} />
+      <Submit rating={rating} handleSubmit={handleSubmit} />
     </div>
   );
 }
 
-function RatingBtns() {
-  const ratings = [
-    { key: 1, clicked: false },
-    { key: 2, clicked: false },
-    { key: 3, clicked: false },
-    { key: 4, clicked: false },
-    { key: 5, clicked: false },
-  ];
+function RatingBtns({ rating, setRate }) {
+  const ratings = [1, 2, 3, 4, 5];
 
-  function handleClick({key}){
-    console.log('clicked');
-    
-  }
-
-  const ratingsItems = ratings.map((rating) => (
-    <button className="ratings-selection" onClick={() => {
-      console.log(`${rating.key}`);
-    }}>{rating.key}</button>
+  const ratingsItems = ratings.map((r) => (
+    <button 
+    //By providing a unique key prop to each button element, you are helping React to identify each element uniquely and optimize the rendering performance.
+    key={r}
+    className="ratings-selection" 
+    //By wrapping the setRate function call inside an arrow function, to delay the execution of the function until the button is clicked and you are not directly updating the state of the App component while it is still rendering.
+    onClick={() => setRate(r)}
+    >
+      {r}
+    </button>
   ));
 
-  return (
-  <div className="ratings-selection-list" >
+  return <div 
+  className="ratings-selection-list">
     {ratingsItems}
-    </div>
-    );
+    </div>;
 }
 
-function Submit() {
-  function handleSubmit(){
-    
-  }
-  return <button className="ratings-submit" onClick={handleSubmit}>SUBMIT</button>;
+function Submit({ rating, handleSubmit }) {
+  return (
+    <button className="ratings-submit" onClick={handleSubmit}>
+      SUBMIT
+    </button>
+  );
 }
