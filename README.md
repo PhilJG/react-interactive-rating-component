@@ -44,7 +44,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github.com/PhilJG/react-interactive-rating-component)](https://github.com/PhilJG/react-interactive-rating-component)
-- Live Site URL: [react-interactive-rating-component](https://philjg.github.io/react-interactive-rating-component/)
+- Live Site URL: [react-interactive-rating-component](https://guileless-gumdrop-2ef203.netlify.app/)
 
 
 ### Built with
